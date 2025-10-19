@@ -1,0 +1,18 @@
+/vendor/
+/node_modules/
+/public/storage
+/storage/*.key
+.env
+.env.backup
+.phpunit.result.cache
+
+# IDE & system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Composer / npm logs
+composer.lock
+npm-debug.log
+yarn-error.log
