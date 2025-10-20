@@ -6,6 +6,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SuggestionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LimitController;
 
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/login',[AuthController::class,'login']);
@@ -29,4 +30,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Suggestions: where to reduce costs
     Route::get('/suggestions', [SuggestionController::class,'index']); // ?month=2025-09
+
+     Route::get('/limits/monthly', [LimitController::class, 'getMonthly']);
+    Route::post('/limits/monthly', [LimitController::class, 'setMonthly']);
+     Route::get('/limits/monthly/status', [LimitController::class, 'status']);
 });
